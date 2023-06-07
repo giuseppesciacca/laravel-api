@@ -42,6 +42,24 @@
                 </div>
                 @enderror
             </div>
+
+            <div class="mb-3">
+                <label for="type_id" class="form-label">Type</label>
+                <select class="form-select" name="type_id" id="type_id" class="form-control @error('type_id') is-invalid @enderror">
+                    <option value="">Select a type</option>
+                    @foreach ($types as $type)
+                    <option value="{{$type->id}}" {{ $type->id == old('type_id', '') ? 'selected' : '' }}> {{$type->name}}
+                    </option>
+                    @endforeach
+                </select>
+
+                @error('type_id')
+                <div class="alert alert-danger" role="alert">
+                    <strong>Errore: </strong>{{$message}}
+                </div>
+                @enderror
+            </div>
+
             <div class="mb-3">
                 <label for="stack" class="form-label">Stack</label>
                 <input type="text" name="stack" id="stack" class="form-control @error('stack') is-invalid @enderror" placeholder="Project stack here " aria-describedby="nameHelper">

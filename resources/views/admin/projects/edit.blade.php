@@ -45,7 +45,8 @@
                 <select class="form-select" name="type_id" id="type_id" class="form-control @error('type_id') is-invalid @enderror">
                     <option value="">Select a type</option>
                     @foreach ($types as $type)
-                    <option value="$type->id" {{ $type->id  == old('type_id', '') ? 'selected' : '' }}>{{$type->name}}</option>
+                    <option value="{{$type->id}}" {{ $type->id == old('type_id', $project->type->id) ? 'selected' : '' }}> {{$type->name}}
+                    </option>
                     @endforeach
                 </select>
 

@@ -12,6 +12,9 @@
             <h1>{{$project->title}}</h1>
             <p>{{$project->description}}</p>
             <p>{{$project->type?->name}} </p>
+            <div class="meta">
+                <span class="badge bg-primary">{{$project->type?->name}}</span>
+            </div>
             <p>{{$project->stack}}</p>
         </div>
 
