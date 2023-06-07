@@ -8,6 +8,7 @@
     <table class="table table-striped m-0 py-5">
         <thead>
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Slug</th>
                 <th scope="col">img_path</th>
@@ -20,6 +21,7 @@
 
             @forelse ($projects as $project)
             <tr>
+                <td scope="row">{{$project->id}}</td>
                 <td scope="row">{{$project->title}}</td>
                 <td>{{$project->slug}}</td>
                 <td class="text-center">
@@ -29,17 +31,17 @@
                 <td>
                     <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye"></i></a>
                     <a href="{{route('admin.projects.edit', $project->slug)}}"><i class="fa-solid fa-pencil"></i></a>
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-$project->id">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{$project->id}}">
                         <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>
                     </button>
 
 
                     <!-- Modal -->
-                    <div class="modal fade" id="modalId-$project->id" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                    <div class="modal fade" id="modalId-{{$project->id}}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
                         <div class="modal-dialog" role="dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="modalTitleId">Delete Project</h1>
+                                    <h1 class="modal-title fs-5" id="modalTitleId">Delete {{$project->title}}?</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
