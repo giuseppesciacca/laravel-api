@@ -11,15 +11,8 @@
         <div class="col">
             <h1>{{$project->title}}</h1>
             <p>{{$project->description}}</p>
+            <p>{{$project->type?->name}} </p>
             <p>{{$project->stack}}</p>
-
-            <!--             <i class="fa-brands fa-html5"></i>
-            <i class="fa-brands fa-css3-alt"></i>
-            <i class="fa-brands fa-bootstrap"></i>
-            <i class="fa-brands fa-js"></i>
-            <i class="fa-brands fa-vuejs"></i>
-            <i class="fa-brands fa-php"></i>
-            <i class="fa-brands fa-laravel"></i> -->
         </div>
 
     </div>
