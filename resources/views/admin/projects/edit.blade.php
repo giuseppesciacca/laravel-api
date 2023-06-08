@@ -6,7 +6,7 @@
 
     <div class="container">
 
-        <h5 class="text-uppercase text-muted my-4">Edit a Project</h5>
+        <h5 class="text-uppercase text-muted my-4">Edit "{{$project->title}}" Project</h5>
 
         <form action="{{route('admin.projects.update', $project)}}" method="post">
             @csrf
@@ -24,7 +24,7 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <input type="text" name="description" id="description" value="{{old('description', $project->description)}}" class="form-control @error('description') is-invalid @enderror" placeholder="project description here " aria-describedby="nameHelper">
+                <textarea cols="30" rows="5" name="description" id="description" value="{{old('description', $project->description)}}" class="form-control @error('description') is-invalid @enderror" placeholder="project description here " aria-describedby="nameHelper"></textarea>
                 @error('description')
                 <div class="alert alert-danger" role="alert">
                     <strong>Errore: </strong>{{$message}}
@@ -45,7 +45,7 @@
                 <select name="type_id" id="type_id" class="form-select @error('type_id') is-invalid @enderror">
                     <option value="">Select a type</option>
                     @foreach ($types as $type)
-                    <option value="{{$type->id}}" {{ $type->id == old('type_id', $project->type->id) ? 'selected' : '' }}>{{$type->name}}</option>
+                    <option value="{{$type?->id}}" {{ $type?->id == old('type_id', $project->type?->id) ? 'selected' : '' }}>{{$type?->name}}</option>
                     </option>
                     @endforeach
                 </select>
@@ -68,7 +68,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary w-100 my-4">Save</button>
+            <button type="submit" class="btn btn-primary w-100 my-4">Edit</button>
 
         </form>
 
