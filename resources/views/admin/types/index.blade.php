@@ -45,7 +45,7 @@
                             <td>{{$type->name}}</td>
                             <td>{{$type->slug}}</td>
                             <td>
-                                <a href="#"><i class="fa-solid fa-pencil"></i></a>
+                                <a href="{{route('admin.types.edit', $type->slug)}}"><i class="fa-solid fa-pencil"></i></a>
                                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{$type->id}}">
                                     <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>
                                 </button>
