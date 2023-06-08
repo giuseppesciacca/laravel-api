@@ -1,12 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-<?php
-
-/* foreach ($project->tecnologies as $tecnology) {
-    dd($tecnology);
-} */
-?>
 
 <div class="container p-5">
     <div class="row row-cols-1 row-cols-lg-2">

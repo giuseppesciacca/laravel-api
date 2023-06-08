@@ -75,17 +75,6 @@
                 @enderror
             </div>
 
-            <div class="mb-3">
-                <label for="stack" class="form-label">Stack</label>
-                <input type="text" name="stack" id="stack" class="form-control @error('stack') is-invalid @enderror" placeholder="Project stack here " aria-describedby="nameHelper">
-
-                @error('stack')
-                <div class="alert alert-danger" role="alert">
-                    <strong>Errore: </strong>{{$message}}
-                </div>
-                @enderror
-
-            </div>
             <button type="submit" class="btn btn-primary w-100 my-4">Save</button>
 
         </form>

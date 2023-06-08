@@ -12,7 +12,6 @@
                 <th scope="col">Title</th>
                 <th scope="col">Slug</th>
                 <th scope="col">img_path</th>
-                <th scope="col">stack</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -27,7 +26,6 @@
                 <td class="text-center">
                     <img class="img-fluid" style="height: 100px;" src="{{$project->img_path}}" alt="{{$project->title}}" loading="lazy">
                 </td>
-                <td>{{$project->stack}}</td>
                 <td>
                     <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye"></i></a>
                     <a href="{{route('admin.projects.edit', $project->slug)}}"><i class="fa-solid fa-pencil"></i></a>
