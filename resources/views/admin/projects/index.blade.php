@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container-fluid bg-light py-3">
+    @include('partials.session_message')
+    @include('partials.validation_errors')
+
     <h5>Add new Project</h5>
     <a href="{{route('admin.projects.create')}}"><i class="fa-solid fa-plus fa-2x"></i></a>
 

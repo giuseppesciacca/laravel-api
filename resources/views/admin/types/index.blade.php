@@ -3,17 +3,24 @@
 @section('content')
 
 <div class="container">
-    <h1>Types View</h1>
+    <h1 class="py-4">Types View</h1>
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
+            <h6>Create new Type</h6>
             <form action="{{route('admin.types.store')}}" method="post">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="New Type here">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" aria-describedby="helpId" placeholder="New Type here">
                     <small id="helpId" class="form-text text-muted">Create a new Type. Max 50 characters.</small>
                 </div>
+                @error('name')
+                <div class="alert alert-danger" role="alert">
+                    <strong>Errore: </strong>{{$message}}
+                </div>
+                @enderror
+
 
                 <button type="submit" class="btn btn-warning">Add</button>
             </form>
