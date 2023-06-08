@@ -13,7 +13,7 @@ class StoreTecnologyRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
