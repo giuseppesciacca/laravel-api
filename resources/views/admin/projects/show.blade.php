@@ -3,7 +3,9 @@
 @section('content')
 <?php
 
-dd($project)
+/* foreach ($project->tecnologies as $tecnology) {
+    dd($tecnology);
+} */
 ?>
 
 <div class="container p-5">
@@ -21,7 +23,9 @@ dd($project)
             </div>
 
             <div class="meta">
-                <span class="badge bg-secondary">{{$project}}</span>
+                @foreach ($project->tecnologies as $tecnology)
+                <span class="badge bg-secondary">{{$tecnology?->name}}</span>
+                @endforeach
             </div>
         </div>
 
