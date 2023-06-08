@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Tecnology;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
@@ -29,8 +30,9 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
+        $tecnologies = Tecnology::all();
 
-        return view('admin.projects.create', compact('types'));
+        return view('admin.projects.create', compact('types', 'tecnologies'));
     }
 
     /**
@@ -59,7 +61,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+        $tecnologies = Tecnology::all();
+
+        return view('admin.projects.show', compact('project', 'tecnologies'));
     }
 
     /**
@@ -71,8 +75,9 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
+        $tecnologies = Tecnology::all();
 
-        return view('admin.projects.edit', compact('project', 'types'));
+        return view('admin.projects.edit', compact('project', 'types', 'tecnologies'));
     }
 
     /**

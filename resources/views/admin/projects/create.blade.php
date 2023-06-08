@@ -60,6 +60,21 @@
                 @enderror
             </div>
 
+            <div class='form-group'>
+                <p>Select the tecnologies:</p>
+                @foreach ($tecnologies as $tecnology)
+                <div class="form-check @error('tecnologies') is-invalid @enderror">
+                    <label class='form-check-label'>
+                        <input name='tecnologies[]' type='checkbox' value='{{ $tecnology->id}}' class='form-check-input' {{ in_array($tecnology->id, old('tecnologies', [])) ? 'checked' : '' }}>
+                        {{ $tecnology->name }}
+                    </label>
+                </div>
+                @endforeach
+                @error('tecnologies')
+                <div class='invalid-feedback'>{{ $message}}</div>
+                @enderror
+            </div>
+
             <div class="mb-3">
                 <label for="stack" class="form-label">Stack</label>
                 <input type="text" name="stack" id="stack" class="form-control @error('stack') is-invalid @enderror" placeholder="Project stack here " aria-describedby="nameHelper">

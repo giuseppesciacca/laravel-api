@@ -14,7 +14,14 @@
             <div class="meta">
                 <span class="badge bg-primary">{{$project->type?->name}}</span>
             </div>
-            <p>{{$project->stack}}</p>
+            <!-- <p>{{$project->stack}}</p> -->
+            @forelse ($tecnologies as $tecnology)
+            <div class="meta">
+                <span class="badge bg-secondary">{{$project->tecnology?->name}}</span>
+            </div>
+            @empty
+
+            @endforelse
         </div>
 
     </div>
