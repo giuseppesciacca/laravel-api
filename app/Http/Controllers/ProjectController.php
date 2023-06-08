@@ -48,7 +48,11 @@ class ProjectController extends Controller
         $slug = Project::generateSlug($val_data['title']);
 
         $val_data['slug'] = $slug;
-        Project::create($val_data);
+        $new_project = Project::create($val_data);
+
+        if ($request->has('tecnologies')) {
+            $new_project->tecnologies()->attach($request->tecnologies);
+        }
 
         return to_route('admin.projects.index')->with('message', 'Project added successfully');
     }
@@ -96,6 +100,10 @@ class ProjectController extends Controller
         $val_data['slug'] = $slug;
 
         $project->update($val_data);
+
+        if ($request->has('tecnologies')) {
+            $project->tecnologies()->sync($request->tecnologies);
+        }
 
         return to_route('admin.projects.index')->with('message', 'Project updated successfully');
     }
