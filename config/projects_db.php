@@ -12,7 +12,7 @@ return [
     ],
     [
         "title" => "js campominato dom",
-        "description" => "A project using Bootstrap and JS Vanilla. It's a reproduction of minesweeper with 3 level of difficoulty. It is not the fully functioning game, because the boxes do not indicate the distance to the bombs. I will implement this feature soon.",
+        "description" => "A project using Bootstrap and JS Vanilla. It's a reproduction of minesweeper with 3 level of difficoulty. It is not the fully functioning game, because the cells do not indicate the distance to the bombs. I will implement this feature soon.",
         "img_path" => "https://store-images.s-microsoft.com/image/apps.64392.14107731690166076.85987b74-233b-4104-8827-9b923b277987.e6b2fbb2-f8d6-4a49-b1fc-a8d9c5db207d?mode=scale&q=90&h=200&w=200&background=%23FFFFFF",
     ],
     [

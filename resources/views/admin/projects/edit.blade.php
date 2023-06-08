@@ -24,7 +24,7 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea cols="30" rows="5" name="description" id="description" value="{{old('description', $project->description)}}" class="form-control @error('description') is-invalid @enderror" placeholder="project description here " aria-describedby="nameHelper"></textarea>
+                <textarea cols="30" rows="5" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="project description here " aria-describedby="nameHelper">{{old('description', $project->description)}}</textarea>
                 @error('description')
                 <div class="alert alert-danger" role="alert">
                     <strong>Errore: </strong>{{$message}}
