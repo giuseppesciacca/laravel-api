@@ -36,6 +36,7 @@
                         <tr>
                             <th>ID</th>
                             <th>name</th>
+                            <th>Count</th>
                             <th>Slug</th>
                             <th>Action</th>
                         </tr>
@@ -45,6 +46,7 @@
                         <tr>
                             <td>{{$type->id}}</td>
                             <td>{{$type->name}}</td>
+                            <td> <span class="badge bg-dark">{{$type->projects->count()}}</span></td>
                             <td>{{$type->slug}}</td>
                             <td>
                                 <a href="{{route('admin.types.edit', $type->slug)}}"><i class="fa-solid fa-pencil"></i></a>
