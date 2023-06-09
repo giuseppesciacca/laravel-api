@@ -74,7 +74,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            <td>EDIT/DELETE</td>
                         </tr>
                         @empty
                         <p>No types</p>
