@@ -10,7 +10,7 @@
 
         <form action="{{route('admin.types.update', $type)}}" method="post">
             @csrf
-            @method('PUT')
+            @method('PATCH')
 
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>

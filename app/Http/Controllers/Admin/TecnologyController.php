@@ -39,7 +39,14 @@ class TecnologyController extends Controller
      */
     public function store(StoreTecnologyRequest $request)
     {
-        //
+        $val_data = $request->validated();
+
+        $slug = Tecnology::generateSlug($val_data['name']);
+
+        $val_data['slug'] = $slug;
+        Tecnology::create($val_data);
+
+        return to_route('admin.tecnologies.index')->with('message', 'Tecnology added successfully');
     }
 
     /**
@@ -73,7 +80,15 @@ class TecnologyController extends Controller
      */
     public function update(UpdateTecnologyRequest $request, Tecnology $tecnology)
     {
-        //
+        $val_data = $request->validated();
+
+        $slug = Tecnology::generateSlug($val_data['name']);
+
+        $val_data['slug'] = $slug;
+
+        $tecnology->update($val_data);
+
+        return to_route('admin.tecnologies.index')->with('message', 'Tecnology updated successfully');
     }
 
     /**
@@ -84,6 +99,8 @@ class TecnologyController extends Controller
      */
     public function destroy(Tecnology $tecnology)
     {
-        //
+        $tecnology->delete();
+
+        return to_route('admin.tecnologies.index')->with('message', 'Tecnology deleted successfully');
     }
 }

@@ -45,11 +45,26 @@
                         @forelse ($tecnologies as $tecnology)
                         <tr>
                             <td>{{$tecnology->id}}</td>
-                            <td>{{$tecnology->name}}</td>
+                            <td>
+                                <form action="{{route('admin.tecnologies.update', $tecnology)}}" method="post">
+                                    @csrf
+                                    @method('PATCH')
+
+                                    <div>
+                                        <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name', $tecnology->name)}}" aria-describedby=" nameHelper">
+                                        <small id="helpId" class="text-muted"><i class="fa-solid fa-hand-point-up"></i> Write inside for edit name</small>
+
+                                        @error('name')
+                                        <div class="alert alert-danger" role="alert">
+                                            <strong>Errore: </strong>{{$message}}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                </form>
+                            </td>
                             <td> <span class="badge bg-dark">{{$tecnology->projects->count()}}</span></td>
                             <td>{{$tecnology->slug}}</td>
                             <td>
-                                <a href="{{route('admin.tecnologies.edit', $tecnology->slug)}}"><i class="fa-solid fa-pencil"></i></a>
                                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{$tecnology->id}}">
                                     <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>
                                 </button>

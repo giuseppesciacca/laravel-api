@@ -22,6 +22,8 @@
             </div>
         </div>
     </div>
-    <a name="" id="" class="btn btn-primary my-3" href="{{'admin/projects'}}" role="button">Vai ai progetti</a>
+    <a name="" id="" class="btn btn-primary my-3" href="{{'admin/projects'}}" role="button">Go to projects</a>
+    <a name="" id="" class="btn btn-primary my-3" href="{{'admin/types'}}" role="button">Go to types</a>
+    <a name="" id="" class="btn btn-primary my-3" href="{{'admin/tecnologies'}}" role="button">Go to tecnologies</a>
 </div>
 @endsection
