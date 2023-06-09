@@ -12,11 +12,16 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'img_path', 'slug', 'type_id'];
+    protected $fillable = ['title', 'description', 'img_path', 'slug', 'type_id', 'user_id'];
 
     public static function generateSlug($title)
     {
         return Str::slug($title, '-');
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->BelongsTo(User::class);
     }
 
     public function type(): BelongsTo
