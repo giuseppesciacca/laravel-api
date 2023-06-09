@@ -3,6 +3,8 @@
 @section('content')
 
 <div class="container">
+    @include('partials.session_message')
+
     <h1 class="py-4">Types View</h1>
 
     <div class="row">
