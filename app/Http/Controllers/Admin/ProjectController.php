@@ -8,6 +8,7 @@ use App\Models\Type;
 use App\Models\Tecnology;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -18,7 +19,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+
+        $projects = Auth::user()->projects()->orderBy('id')->get();
 
         return view('admin.projects.index', compact('projects'));
     }
@@ -49,6 +51,8 @@ class ProjectController extends Controller
         $slug = Project::generateSlug($val_data['title']);
 
         $val_data['slug'] = $slug;
+        $val_data['user_id'] = Auth::id();
+
         $new_project = Project::create($val_data);
 
         if ($request->has('tecnologies')) {
