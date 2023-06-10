@@ -15,6 +15,7 @@
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name', $type->name)}}" placeholder=" type name here " aria-describedby=" nameHelper">
+                <small id="helpId" class="form-text text-muted">Edit a Type. Max 100 characters.</small>
 
                 @error('name')
                 <div class="alert alert-danger" role="alert">

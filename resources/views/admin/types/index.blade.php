@@ -15,7 +15,7 @@
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" aria-describedby="helpId" placeholder="New Type here">
-                    <small id="helpId" class="form-text text-muted">Create a new Type. Max 50 characters.</small>
+                    <small id="helpId" class="form-text text-muted">Create a new Type. Max 100 characters.</small>
                 </div>
                 @error('name')
                 <div class="alert alert-danger" role="alert">

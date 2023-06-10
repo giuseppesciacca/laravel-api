@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');  //landing page is login
 });
 
 Route::middleware(['auth', 'verified'])
