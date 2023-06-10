@@ -1,14 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
+    <h2>Welcome {{Auth::user()->name}} </h2>
     <h2 class="fs-4 text-secondary my-4">
         {{ __('Dashboard') }}
     </h2>
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-                <div class="card-header">{{ __('User Dashboard') }}</div>
+                <div class="card-header">{{Auth::user()->name}} {{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -22,8 +23,5 @@
             </div>
         </div>
     </div>
-    <a name="" id="" class="btn btn-primary my-3" href="{{'admin/projects'}}" role="button">Go to projects</a>
-    <a name="" id="" class="btn btn-primary my-3" href="{{'admin/types'}}" role="button">Go to types</a>
-    <a name="" id="" class="btn btn-primary my-3" href="{{'admin/tecnologies'}}" role="button">Go to tecnologies</a>
 </div>
 @endsection
