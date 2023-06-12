@@ -33,13 +33,19 @@
             </div>
             <div class="mb-3">
                 <label for="img_path" class="form-label">Image</label>
-                <input type="file" name="img_path" id="img_path" class="form-control @error('img_path') is-invalid @enderror" placeholder="project image here " aria-describedby="imageHelper" value="{{old('img_path', $project->img_path)}}">
-                @error('img_path')
-                <div class="alert alert-danger" role="alert">
-                    <strong>Errore: </strong>{{$message}}
+                <div class="d-flex align-items-center justify-content-between gap-3">
+                    <img width="100" class="img-fluid" src="{{asset('storage/' . $project->img_path)}}" alt="{{$project->title}}">
+
+                    <input type="file" name="img_path" id="img_path" class="form-control @error('img_path') is-invalid @enderror h-100" placeholder="project image here " aria-describedby="imageHelper">
+                    @error('img_path')
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Errore: </strong>{{$message}}
+                    </div>
+                    @enderror
                 </div>
-                @enderror
+
             </div>
+
             <div class="mb-3">
                 <label for="type_id" class="form-label">Type</label>
                 <select name="type_id" id="type_id" class="form-select @error('type_id') is-invalid @enderror">
