@@ -8,13 +8,13 @@
 
         <h5 class="text-uppercase text-muted my-4">Edit "{{$project->title}}" Project</h5>
 
-        <form action="{{route('admin.projects.update', $project)}}" method="post">
+        <form action="{{route('admin.projects.update', $project)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" value="{{old('title', $project->title)}}" placeholder=" project title here " aria-describedby=" nameHelper">
+                <input type="type" name="title" id="title" class="form-control @error('title') is-invalid @enderror" value="{{old('title', $project->title)}}" placeholder=" project title here " aria-describedby=" nameHelper">
 
                 @error('title')
                 <div class="alert alert-danger" role="alert">
@@ -33,7 +33,7 @@
             </div>
             <div class="mb-3">
                 <label for="img_path" class="form-label">Image</label>
-                <input type="text" name="img_path" id="img_path" class="form-control @error('img_path') is-invalid @enderror" placeholder="project image here " aria-describedby="imageHelper" value="{{old('img_path', $project->img_path)}}">
+                <input type="file" name="img_path" id="img_path" class="form-control @error('img_path') is-invalid @enderror" placeholder="project image here " aria-describedby="imageHelper" value="{{old('img_path', $project->img_path)}}">
                 @error('img_path')
                 <div class="alert alert-danger" role="alert">
                     <strong>Errore: </strong>{{$message}}

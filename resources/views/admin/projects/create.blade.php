@@ -8,7 +8,7 @@
 
         <h5 class="text-uppercase text-muted my-4">Add a new Project</h5>
 
-        <form action="{{route('admin.projects.store')}}" method="post">
+        <form action="{{route('admin.projects.store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -32,9 +32,10 @@
                 </div>
                 @enderror
             </div>
+
             <div class="mb-3">
                 <label for="img_path" class="form-label">Image</label>
-                <input type="text" name="img_path" id="img_path" class="form-control @error('img_path') is-invalid @enderror" placeholder="Project image here " aria-describedby="imageHelper">
+                <input type="file" name="img_path" id="img_path" class="form-control @error('img_path') is-invalid @enderror" placeholder="Project image here " aria-describedby="imageHelper">
 
                 @error('img_path')
                 <div class="alert alert-danger" role="alert">

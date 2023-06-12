@@ -20,6 +20,6 @@ class Type extends Model
 
     public function projects(): HasMany
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Project::class)->where('user_id', auth()->id());
     }
 }

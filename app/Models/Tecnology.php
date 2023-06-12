@@ -15,7 +15,7 @@ class Tecnology extends Model
 
     public function projects(): BelongsToMany
     {
-        return $this->belongsToMany(Project::class);
+        return $this->belongsToMany(Project::class)->where('user_id', auth()->id());
     }
 
     public static function generateSlug($name)
