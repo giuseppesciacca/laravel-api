@@ -110,6 +110,19 @@ class ProjectController extends Controller
 
         $val_data['slug'] = $slug;
 
+        if ($request->hasFile('img_path')) {
+
+            //elimino la precedente immagine
+            if ($project->img_path) {
+                Storage::delete($project->img_path);
+            }
+
+            //aggiungo la nuova
+            $img_path = Storage::put('uploads', $request->img_path);
+
+            $val_data['img_path'] = $img_path;
+        }
+
         $project->update($val_data);
 
         if ($request->has('tecnologies')) {
@@ -127,6 +140,11 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        // quando elimino il progetto elimino prima anche l'immagine
+        if ($project->img_path) {
+            Storage::delete($project->img_path);
+        }
+
         $project->delete();
         return to_route('admin.projects.index')->with('message', 'project deleted successfully');
     }

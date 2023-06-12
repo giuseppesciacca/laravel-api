@@ -6,7 +6,7 @@
     <div class="row row-cols-1 row-cols-lg-2">
 
         <div class="col">
-            <img class="img-fluid" src=" {{$project->img_path}}" alt="{{$project->slug}}">
+            <img class="img-fluid" src=" {{asset('storage/'. $project->img_path)}}" alt="{{$project->slug}}">
         </div>
 
         <div class="col">
