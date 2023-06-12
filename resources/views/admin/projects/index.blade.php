@@ -27,7 +27,7 @@
                 <td scope="row">{{$project->title}}</td>
                 <td>{{$project->slug}}</td>
                 <td class="text-center">
-                    <img class="img-fluid" style="height: 100px;" src="{{$project->img_path}}" alt="{{$project->title}}" loading="lazy">
+                    <img class="img-fluid" style="height: 100px;" src="{{asset('storage/'. $project->img_path)}} " alt="{{$project->title}}" loading="lazy">
                 </td>
                 <td>
                     <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye"></i></a>
