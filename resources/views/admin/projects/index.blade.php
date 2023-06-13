@@ -11,11 +11,11 @@
     <table class="table table-striped m-0 py-5">
         <thead>
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col">#ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Slug</th>
-                <th scope="col">img_path</th>
-                <th scope="col">Action</th>
+                <th scope="col">Preview image</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
 

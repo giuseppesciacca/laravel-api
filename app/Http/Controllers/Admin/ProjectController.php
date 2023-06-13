@@ -89,10 +89,15 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        $types = Type::all();
-        $tecnologies = Tecnology::all();
 
-        return view('admin.projects.edit', compact('project', 'types', 'tecnologies'));
+        if (Auth::id() === $project->user_id) {
+
+            $types = Type::all();
+            $tecnologies = Tecnology::all();
+
+            return view('admin.projects.edit', compact('project', 'types', 'tecnologies'));
+        }
+        abort(403);
     }
 
     /**
