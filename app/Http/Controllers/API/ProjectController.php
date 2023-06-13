@@ -9,7 +9,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::with(['user', 'type', 'tecnologies'])->get();
+        $projects = Project::with(['user', 'type', 'tecnologies'])->orderByDesc('id')->get();
 
         return response()->json([
             'success' => true,
