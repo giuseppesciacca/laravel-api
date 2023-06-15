@@ -45,7 +45,18 @@
             </div>
 
             <div class="mb-3">
-                <label for="github_repo" class="form-label">Github Repo url</label>
+                <label for="project_link" class="form-label">Github Repo url</label>
+                <input type="text" name="project_link" id="project_link" class="form-control @error('project_link') is-invalid @enderror" placeholder="Project url here" aria-describedby="imageHelper">
+
+                @error('project_link')
+                <div class="alert alert-danger" role="alert">
+                    <strong>Errore: </strong>{{$message}}
+                </div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="project_link" class="form-label">Project url</label>
                 <input type="text" name="github_repo" id="github_repo" class="form-control @error('github_repo') is-invalid @enderror" placeholder="Project github repo here" aria-describedby="imageHelper">
 
                 @error('github_repo')

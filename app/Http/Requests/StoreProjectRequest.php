@@ -30,7 +30,8 @@ class StoreProjectRequest extends FormRequest
             'img_path' => 'nullable',
             'description' => 'nullable',
             'tecnologies' => ['exists:tecnologies,id'],
-            'github_repo' => 'required|unique:projects'
+            'github_repo' => 'required|unique:projects',
+            'project_link' => 'nullable'
         ];
     }
 }

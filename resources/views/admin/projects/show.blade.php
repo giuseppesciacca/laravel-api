@@ -20,6 +20,12 @@
                 <a href="{{$project->github_repo}}" class="text-decoration-none" target="blank">Repo Github <i class="fa-brands fa-square-github fa-2x"></i></a>
             </div>
 
+            @if ($project->project_link)
+            <div>
+                <a href="{{$project->project_link}}" class="text-decoration-none" target="blank">Go to project <i class="fa-solid fa-binoculars fa-2x"></i></a>
+            </div>
+            @endif
+
             <div class="meta">
                 @foreach ($project->tecnologies as $tecnology)
                 <span class="badge bg-secondary">{{$tecnology?->name}}</span>

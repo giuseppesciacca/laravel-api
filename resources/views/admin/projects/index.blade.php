@@ -39,7 +39,7 @@
                     @endif
                 </td>
                 <td scope="row" class="text-center">
-                    @if ($project->link_project)
+                    @if ($project->project_link)
                     <i class="fa-solid fa-circle-check" style="color: #0ef15a;"></i>
                     @else
                     <i class="fa-solid fa-circle-xmark" style="color: #f20707;"></i>
