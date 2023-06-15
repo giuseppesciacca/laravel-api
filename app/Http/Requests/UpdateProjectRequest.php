@@ -31,7 +31,7 @@ class UpdateProjectRequest extends FormRequest
             'img_path' => 'nullable',
             'description' => 'nullable',
             'tecnologies' => ['exists:tecnologies,id'],
-            'github_repo' => 'required|unique:projects',
+            'github_repo' => ['required', Rule::unique('projects', 'github_repo')->ignore($this->project)],
             'project_link' => 'nullable'
         ];
     }
