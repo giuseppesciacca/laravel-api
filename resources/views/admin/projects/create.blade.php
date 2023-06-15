@@ -12,7 +12,7 @@
             @csrf
 
             <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
+                <label for="title" class="form-label">Title (*)</label>
                 <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Project title here " aria-describedby="nameHelper">
 
                 @error('title')
@@ -45,10 +45,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="project_link" class="form-label">Github Repo url</label>
-                <input type="text" name="project_link" id="project_link" class="form-control @error('project_link') is-invalid @enderror" placeholder="Project url here" aria-describedby="imageHelper">
+                <label for="github_repo" class="form-label">Github Repo url (*)</label>
+                <input type="text" name="github_repo" id="github_repo" class="form-control @error('github_repo') is-invalid @enderror" placeholder="Project url here" aria-describedby="imageHelper">
 
-                @error('project_link')
+                @error('github_repo')
                 <div class="alert alert-danger" role="alert">
                     <strong>Errore: </strong>{{$message}}
                 </div>
@@ -67,7 +67,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="type_id" class="form-label">Type</label>
+                <label for="type_id" class="form-label">Type (*)</label>
                 <select name="type_id" id="type_id" class="form-select @error('type_id') is-invalid @enderror">
                     <option value="">Select a type</option>
                     @foreach ($types as $type)
@@ -100,6 +100,9 @@
 
             <button type="submit" class="btn btn-primary w-100 my-4">Save</button>
 
+            <p>
+                (*) -> required!
+            </p>
         </form>
 
     </div>
