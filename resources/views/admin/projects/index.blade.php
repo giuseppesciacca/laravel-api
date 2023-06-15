@@ -15,6 +15,8 @@
                 <th scope="col">Title</th>
                 <th scope="col">Slug</th>
                 <th scope="col">Preview image</th>
+                <th scope="col">Github link</th>
+                <th scope="col">View Project</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -28,6 +30,20 @@
                 <td>{{$project->slug}}</td>
                 <td class="text-center">
                     <img class="img-fluid" style="height: 100px;" src="{{asset('storage/'. $project->img_path)}}" alt="{{$project->title}}" loading="lazy">
+                </td>
+                <td scope="row" class="text-center">
+                    @if ($project->github_repo)
+                    <i class="fa-solid fa-circle-check" style="color: #0ef15a;"></i>
+                    @else
+                    <i class="fa-solid fa-circle-xmark" style="color: #f20707;"></i>
+                    @endif
+                </td>
+                <td scope="row" class="text-center">
+                    @if ($project->link_project)
+                    <i class="fa-solid fa-circle-check" style="color: #0ef15a;"></i>
+                    @else
+                    <i class="fa-solid fa-circle-xmark" style="color: #f20707;"></i>
+                    @endif
                 </td>
                 <td>
                     <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye"></i></a>

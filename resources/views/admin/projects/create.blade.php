@@ -34,10 +34,21 @@
             </div>
 
             <div class="mb-3">
-                <label for="img_path" class="form-label">Image</label>
+                <label for="github_repo" class="form-label">Image</label>
                 <input type="file" name="img_path" id="img_path" class="form-control @error('img_path') is-invalid @enderror" placeholder="Project image here " aria-describedby="imageHelper">
 
                 @error('img_path')
+                <div class="alert alert-danger" role="alert">
+                    <strong>Errore: </strong>{{$message}}
+                </div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="github_repo" class="form-label">Github Repo url</label>
+                <input type="text" name="github_repo" id="github_repo" class="form-control @error('github_repo') is-invalid @enderror" placeholder="Project github repo here" aria-describedby="imageHelper">
+
+                @error('github_repo')
                 <div class="alert alert-danger" role="alert">
                     <strong>Errore: </strong>{{$message}}
                 </div>

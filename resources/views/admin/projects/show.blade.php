@@ -16,6 +16,10 @@
                 <span class="badge bg-primary">{{$project->type?->name}}</span>
             </div>
 
+            <div>
+                <a href="{{$project->github_repo}}" class="text-decoration-none" target="blank">Repo Github <i class="fa-brands fa-square-github fa-2x"></i></a>
+            </div>
+
             <div class="meta">
                 @foreach ($project->tecnologies as $tecnology)
                 <span class="badge bg-secondary">{{$tecnology?->name}}</span>

@@ -30,7 +30,8 @@ class UpdateProjectRequest extends FormRequest
             'title' => ['required', Rule::unique('projects', 'title')->ignore($this->project), 'max:100'],
             'img_path' => 'nullable',
             'description' => 'nullable',
-            'tecnologies' => ['exists:tecnologies,id']
+            'tecnologies' => ['exists:tecnologies,id'],
+            'github_repo' => 'required|unique:projects'
         ];
     }
 }

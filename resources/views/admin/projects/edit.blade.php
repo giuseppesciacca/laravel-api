@@ -63,6 +63,18 @@
                 @enderror
             </div>
 
+            <div class="mb-3">
+                <label for="github_repo" class="form-label">Github Repo url</label>
+                <input type="text" name="github_repo" id="github_repo" class="form-control @error('github_repo') is-invalid @enderror" placeholder="Project github repo here" aria-describedby="imageHelper" value="{{old('github_repo', $project->github_repo)}}">
+
+                @error('github_repo')
+                <div class="alert alert-danger" role="alert">
+                    <strong>Errore: </strong>{{$message}}
+                </div>
+                @enderror
+            </div>
+
+
             <div class='form-group'>
                 <p>Select the tecnologies:</p>
                 @foreach ($tecnologies as $tecnology)
