@@ -29,7 +29,7 @@
                 <td scope="row">{{$project->title}}</td>
                 <td>{{$project->slug}}</td>
                 <td class="text-center">
-                    <img class="img-fluid" style="height: 100px;" src="{{asset('storage/'. $project->img_path)}}" alt="{{$project->title}}" loading="lazy">
+                    <img class="img-fluid" style="height: 100px; width:160px; object-fit:cover;" src="{{asset('storage/'. $project->img_path)}}" alt="{{$project->title}}" loading="lazy">
                 </td>
                 <td scope="row" class="text-center">
                     @if ($project->github_repo)
