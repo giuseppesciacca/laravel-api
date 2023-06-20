@@ -1,7 +1,6 @@
 @component('mail::message')
-# Introduction
+# Ciao admin!
 
-Ciao admin!
 Hai ricevuto un nuovo messaggio, ecco qui i dettagli:
 
 Nome: {{ $lead->name }}
