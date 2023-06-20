@@ -46,7 +46,7 @@ class NewLead extends Mailable
     public function content()
     {
         return new Content(
-            view: 'emails.new-contact-mail',
+            markdown: 'emails.new-contact',
         );
     }
 
