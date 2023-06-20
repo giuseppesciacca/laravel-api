@@ -1,13 +1,19 @@
-<x-mail::message>
-    # Introduction
+@component('mail::message')
+# Introduction
 
-    Ciao admin!
-    Hai ricevuto un nuovo messaggio, ecco qui i dettagli:<br>
-    Nome: {{ $lead->name }}<br>
-    Email: {{ $lead->email }}<br>
-    Messaggio:<br>
-    {{ $lead->message }}
+Ciao admin!
+Hai ricevuto un nuovo messaggio, ecco qui i dettagli:
 
-    Thanks,<br>
-    {{ config('app.name') }}
-</x-mail::message>
+Nome: {{ $lead->name }}
+
+Email: {{ $lead->email }}
+
+Messaggio:
+
+@component('mail::panel')
+{{ $lead->message }}
+@endcomponent
+
+Thanks,<br>
+{{ config('app.name') }}
+@endcomponent
