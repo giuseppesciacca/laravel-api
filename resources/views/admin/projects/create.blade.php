@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="bg-light py-3">
+<div class="py-3">
 
     <div class="container">
 
