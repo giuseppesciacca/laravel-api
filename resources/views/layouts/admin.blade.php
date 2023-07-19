@@ -17,6 +17,11 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- FONT GOOGLE CODE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>
@@ -71,7 +76,12 @@
                                     {{__('Tecnologies')}}
                                 </a>
                             </li>
-
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost:5174/">
+                                    <i class="fa-solid fa-arrow-right fa-beat"></i>
+                                    {{__('Go to Front-end')}}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -84,5 +94,7 @@
 
     </div>
 </body>
+
+@include('partials.footer')
 
 </html>
