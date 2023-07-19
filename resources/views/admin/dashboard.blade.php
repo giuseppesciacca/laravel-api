@@ -34,3 +34,5 @@
     </div>
 </div>
 @endsection
+
+@section('partials.footer')
