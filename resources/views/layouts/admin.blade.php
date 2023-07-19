@@ -71,7 +71,12 @@
                                     {{__('Tecnologies')}}
                                 </a>
                             </li>
-
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost:5174/">
+                                    <i class="fa-solid fa-arrow-right fa-beat"></i>
+                                    {{__('Go to Front-end')}}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
