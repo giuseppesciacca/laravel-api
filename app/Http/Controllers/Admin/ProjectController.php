@@ -20,8 +20,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Auth::user()->projects()->orderBy('id')->paginate(8);
-
+        $projects = Project::where('user_id', '=', Auth::id())->orderBy('id')->get();
         return view('admin.projects.index', compact('projects'));
     }
 

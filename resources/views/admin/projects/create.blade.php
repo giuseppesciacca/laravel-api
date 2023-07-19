@@ -13,7 +13,7 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">Title (*)</label>
-                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Project title here " aria-describedby="nameHelper">
+                <input type="text" name="title" id="title" value="{{old('title')}}" class=" form-control @error('title') is-invalid @enderror" placeholder="Project title here " aria-describedby="nameHelper">
 
                 @error('title')
                 <div class="alert alert-danger" role="alert">

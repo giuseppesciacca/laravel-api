@@ -46,10 +46,12 @@
                     @endif
                 </td>
                 <td>
-                    <a href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye"></i></a>
-                    <a href="{{route('admin.projects.edit', $project->slug)}}"><i class="fa-solid fa-pencil"></i></a>
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalId-{{$project->id}}">
-                        <i class="fa-solid fa-trash-can" style="color: #dc3545"></i>
+                    <a name="" id="" class="btn btn-primary" href="{{route('admin.projects.show', $project->slug)}}" role="button"><i class="fa-solid fa-eye" style="color: #ffffff"></i></a>
+
+                    <a name="" id="" class="btn btn-warning" href="{{route('admin.projects.edit', $project->slug)}}" role="button"><i class="fa-solid fa-pencil" style="color: #ffffff"></i></a>
+
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalId-{{$project->id}}">
+                        <i class="fa-solid fa-trash-can" style="color: #ffffff"></i>
                     </button>
 
 
@@ -81,27 +83,10 @@
             </tr>
 
             @empty
-            <p>No projects</p>
+            <p>No projects yet</p>
         </tbody>
         @endforelse
 
     </table>
-
-    <nav aria-label="Page navigation">
-        <ul class="pagination    ">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
 </div>
 @endsection
